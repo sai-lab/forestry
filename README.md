@@ -1,9 +1,9 @@
 # go-template
 
-![Unit Test](https://github.com/sai-lab/go-template/workflows/Unit%20Test/badge.svg)
-![Lint](https://github.com/sai-lab/go-template/workflows/Lint/badge.svg)
-![Go](https://img.shields.io/github/go-mod/go-version/sai-lab/go-template)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/sai-lab/go-template)](https://pkg.go.dev/github.com/sai-lab/go-template)
+![Unit Test](https://github.com/sai-lab/forestry/workflows/Unit%20Test/badge.svg)
+![Lint](https://github.com/sai-lab/forestry/workflows/Lint/badge.svg)
+![Go](https://img.shields.io/github/go-mod/go-version/sai-lab/forestry)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/sai-lab/forestry)](https://pkg.go.dev/github.com/sai-lab/forestry)
 
 
 This repository is template repository for golang developper in Saisho labo.
@@ -22,7 +22,7 @@ Here's the startup script.
     export USER=your-user-name
     export REPOSITORY=$USER/$APPLICATION
     grep -l 'hello' Dockerfile .github/workflows/*.yaml | xargs sed -i.bak -e "s/hello/$APPLICATION/g"
-    grep -l 'sai-lab/go-template' * | xargs sed -i.bak -e "s@sai-lab/go-template@$REPOSITORY@g"
+    grep -l 'sai-lab/forestry' * | xargs sed -i.bak -e "s@sai-lab/forestry@$REPOSITORY@g"
     mv cmd/hello cmd/$APPLICATION
 )
 ```
