@@ -1,9 +1,22 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-	fmt.Println("Hello world")
+	e := echo.New()
+
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
+	e.GET("/health", health)
+
+	e.Logger.Fatal(e.Start(":1192"))
+}
+
+func health(c echo.Context) error {
+	return c.String(http.StatusOK, "OK")
 }
