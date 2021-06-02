@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+
+	"github.com/sai-lab/forestry/pkg/api"
 )
 
 func main() {
@@ -12,11 +12,8 @@ func main() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-	e.GET("/health", health)
+
+	e.GET("/health", api.Health)
 
 	e.Logger.Fatal(e.Start(":1192"))
-}
-
-func health(c echo.Context) error {
-	return c.String(http.StatusOK, "OK")
 }
